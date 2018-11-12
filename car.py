@@ -1,4 +1,3 @@
-# class voor auto
 
 class Car:
     def __init__(self, length, x, y, direction):
