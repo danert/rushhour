@@ -11,47 +11,47 @@ class Board:
         # how many turns have been made
         self.turns = 0
 
-        # loads problem/game
-        def loadgame():
+    # loads problem/game
+    def loadgame():
 
-            # opens text file
-            with open("problem.txt", "r") as f:
+        # opens text file
+        with open("problem.txt", "r") as f:
 
-                width = f.readline()
-                height = f.readline()
-                f.readline()
+            width = f.readline()
+            height = f.readline()
+            f.readline()
 
-                self.exitx = f.readline()
-                self.exity = f.readline()
+            self.exitx = f.readline()
+            self.exity = f.readline()
 
-                # creates red car
+            # creates red car
+            length = f.readline()
+            x = f.readline()
+            y = f.readline()
+            direction = f.readline()
+            self.redcar = Car(length, x, y, direction)
+            f.readline()
+
+            # creates 'regular' cars until EOF
+            while True:
                 length = f.readline()
                 x = f.readline()
                 y = f.readline()
                 direction = f.readline()
-                self.redcar = Car(length, x, y, direction)
-                f.readline()
+                end = f.readline()
 
-                # creates 'regular' cars until EOF
-                while True:
-                    length = f.readline()
-                    x = f.readline()
-                    y = f.readline()
-                    direction = f.readline()
-                    end = f.readline()
+                # adds car to list
+                car = Car(length, x, y, direction)
+                self.cars.append(car)
 
-                    # adds car to list
-                    car = Car(length, x, y, direction)
-                    self.cars.append(car)
+                # if EOF, break
+                if end == "":
+                    break
 
-                    # if EOF, break
-                    if end == "":
-                        break
-
-        # if location of red car == exit, game has been won
-        def won():
-            if redcar.x == self.exitx and redcar.y == self.exity:
-                return True
+    # if location of red car == exit, game has been won
+    def won():
+        if redcar.x == self.exitx and redcar.y == self.exity:
+            return True
 
 
 if __name__ == '__main__':
