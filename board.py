@@ -53,6 +53,9 @@ class Board(object):
         # print start coordinates
         print("car at ({},{})".format(car.x, car.y))
 
+        # change previous coordinates
+        car.remove_coordinates(self.coordinates, self.width)
+
         # change start coordinate
         if car.direction == "hor":
             car.x = car.x + distance
@@ -61,11 +64,10 @@ class Board(object):
 
         # print new coordinates
         print("moved to ({},{})".format(car.x, car.y))
-        # change previous coordinates
-        car.remove_coordinates()
+
 
         # set coordinates in list
-        car.set_coordinates()
+        car.set_coordinates(self.coordinates, self.width)
 
     # if location of red car == exit, game has been won
     def won(self):
