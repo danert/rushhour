@@ -17,11 +17,11 @@ def main():
             return True
 
     # if game hasn't been won yet, move a car
-    #while not won():
+    while not board.won():
         # increase turn counter
     turns = turns + 1
 
-    # TEST
+    # TEST move 1 tile 
     board.move(board.cars[1], 1)
 
     # if won, print amount of steps
