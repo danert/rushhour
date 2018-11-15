@@ -5,12 +5,13 @@ class Car:
         self.y = y
         self.length = length
 
-        # horizontale of verticale rijrichting
+        # horizontal or vertical direction
         self.direction = direction
 
-    def move(self, distance):
+    def set_coordinates():
 
-        if self.direction == horizontal:
-            self.x = self.x + distance
-        else:
-            self.y = self.y + distance
+        # number of first coordinate
+        list_postition = board.width * self.y + self.x
+
+
+        board.coordinates[list_postition] = True

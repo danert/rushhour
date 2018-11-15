@@ -7,6 +7,7 @@ class Board:
         self.exity
         self.cars = []
         self.redcar
+        self.coordinates = [False] * (self.width * self.height)
 
         # how many turns have been made
         self.turns = 0
@@ -53,9 +54,6 @@ class Board:
         if redcar.x == self.exitx and redcar.y == self.exity:
             return True
 
-
-if __name__ == '__main__':
-    self.loadgame()
 
     # if game hasn't been won yet, move a car
     while not won():
