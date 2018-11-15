@@ -68,8 +68,3 @@ class Board(object):
 
         # set coordinates in list
         car.set_coordinates(self.coordinates, self.width)
-
-    # if location of red car == exit, game has been won
-    def won(self):
-        if redcar.x == self.exitx and redcar.y == self.exity:
-            return True
