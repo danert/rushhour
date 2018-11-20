@@ -39,9 +39,10 @@ class Board(object):
                 direction = f.readline().strip()
                 end = f.readline()
 
-                # adds car to list
+                # adds car to list and set coordinates
                 car = Car(length, x, y, direction)
                 self.cars.append(car)
+                car.set_coordinates(self.coordinates, self.width)
 
                 # if EOF, break
                 if end == "":
@@ -54,7 +55,7 @@ class Board(object):
         print("car at ({},{})".format(car.x, car.y))
 
         # change previous coordinates
-        car.remove_coordinates(self.coordinates, self.width)
+        self.coordinates = car.remove_coordinates(self.coordinates, self.width)
 
         # change start coordinate
         if car.direction == "hor":
@@ -65,6 +66,5 @@ class Board(object):
         # print new coordinates
         print("moved to ({},{})".format(car.x, car.y))
 
-
         # set coordinates in list
-        car.set_coordinates(self.coordinates, self.width)
+        self.coordinates = car.set_coordinates(self.coordinates, self.width)
