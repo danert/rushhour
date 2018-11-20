@@ -1,15 +1,15 @@
-from car import Car
+from code.car import Car
 
 class Board(object):
-    def __init__(self):
-
+    def __init__(self, filename):
+        self.filename = filename
         self.cars = []
 
     # loads problem/game
     def loadgame(self):
 
         # opens text file
-        with open("problem.txt", "r") as f:
+        with open(self.filename, "r") as f:
 
             self.width = int(f.readline())
             self.height = int(f.readline())

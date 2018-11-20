@@ -1,11 +1,12 @@
-from board import Board
-from car import Car
+from code.board import Board
+from code.car import Car
 
+filename = "data/problem.txt"
 
 def main():
 
     # make new board
-    board = Board()
+    board = Board(filename)
     board.loadgame()
 
     # turn counter
