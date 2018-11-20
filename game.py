@@ -15,7 +15,7 @@ def main():
     # if car can drive through exit, game has been won
     def won():
 
-        list_pos = board.width * board.redcar.y + board.redcar.x
+        list_pos = board.width * board.cars[0].y + board.cars[0].x
         checkpos = int(list_pos) + 2
 
         # checks coordinates between exit and redcar
@@ -29,14 +29,14 @@ def main():
     while not won():
 
         # TEST move 1 tile
-        board.move(board.redcar, 1)
+        board.move(board.cars[0], 1)
 
         # increase turn counter
         turns = turns + 1
 
     # if won, print amount of steps
     turns = turns + 1
-    print(turns)
+    print(f"amount of turns: {turns}")
 
 
 if __name__ == '__main__':

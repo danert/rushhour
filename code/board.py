@@ -23,15 +23,7 @@ class Board(object):
 
             f.readline()
 
-            # creates red car
-            length = int(f.readline())
-            x = int(f.readline())
-            y = int(f.readline())
-            direction = f.readline()
-            self.redcar = Car(length, x, y, direction)
-            f.readline()
-
-            # creates 'regular' cars until EOF
+            # creates cars until EOF
             while True:
                 length = int(f.readline())
                 x = int(f.readline())
@@ -42,7 +34,7 @@ class Board(object):
                 # adds car to list and set coordinates
                 car = Car(length, x, y, direction)
                 self.cars.append(car)
-                car.set_coordinates(self.coordinates, self.width)
+                self.coordinates = car.set_coordinates(self.coordinates, self.width)
 
                 # if EOF, break
                 if end == "":
