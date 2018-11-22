@@ -108,8 +108,9 @@ class Board(object):
 
             # first position above car
             position_above = car.list_position + (car.length * self.width)
+            print("dit hoort soms 12 te zijn:", position_above)
 
-            # first position left of car
+            # first position under car
             position_below = car.list_position - self.width
 
             # initialise distances car can move
@@ -128,7 +129,6 @@ class Board(object):
 
                     # if car is blocked, stop
                     if self.coordinates[position_above] == True:
-                        print("hoihoi")
                         break
 
                     # if free space, update distance
