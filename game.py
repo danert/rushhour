@@ -17,7 +17,6 @@ def main():
 
         list_pos = board.width * board.cars[0].y + board.cars[0].x
         checkpos = int(list_pos) + 2
-        print(checkpos)
 
         # checks coordinates between exit and redcar
         for x in range(checkpos, 24):
