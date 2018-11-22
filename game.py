@@ -25,6 +25,7 @@ def main():
 
         return True
 
+
     # if game hasn't been won yet, move a car
     while not won():
 
@@ -37,6 +38,7 @@ def main():
         turns = turns + 1
 
     # if won, print amount of steps
+    board.check_move(board.cars[4])
     turns = turns + 1
     print(f"amount of turns: {turns}")
 
