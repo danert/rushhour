@@ -13,7 +13,6 @@ class Car(object):
     def set_coordinates(self, coordinates, width):
 
         # number of first coordinate
-        self.list_position = width * self.y + self.x
         list_position = width * self.y + self.x
 
         # set coordinate as taken in list

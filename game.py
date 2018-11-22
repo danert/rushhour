@@ -37,12 +37,9 @@ def main():
         distances = board.check_move(board.cars[random_car])
 
         # if car cannot move, pick a new car
-        # DEZE GAAT ONEINDIG DOOR
         while distances[0] == 0 and distances[1] == 0:
             random_car = randint(0, (len(board.cars) - 1))
             distances = board.check_move(board.cars[random_car])
-            print("turns: ", turns)
-            print(distances)
 
         # chooses random distance
         random_distance = randint(distances[1], distances[0])
@@ -56,7 +53,6 @@ def main():
 
         # increase turn counter
         turns = turns + 1
-        print("turns", turns)
 
     # if won, print amount of steps
     turns = turns + 1

@@ -51,11 +51,14 @@ class Board(object):
             first_right_x = car.x + car.length
             first_left_x = car.x - 1
 
+            # position of car
+            car_pos = self.width * car.y + car.x
+
             # first position right of car
-            position_right = car.list_position + car.length
+            position_right = car_pos + car.length
 
             # first position left of car
-            position_left = car.list_position - 1
+            position_left = car_pos - 1
 
             # initialise distances car can move
             distance_right = 0
@@ -82,13 +85,12 @@ class Board(object):
 
             # check move to left
             if first_left_x == -1:
-                print("Cannot move left")
 
                 # car is standing against left wall
                 pass
 
             else:
-                for x in range(first_left_x, -1):
+                for x in range(-1, first_left_x):
                     if self.coordinates[position_left] == True:
                         break
 
@@ -106,12 +108,14 @@ class Board(object):
             first_above_y = car.y + car.length
             first_below_y = car.y - 1
 
+            # list position of car
+            car_pos = self.width * car.y + car.x
+
             # first position above car
-            position_above = car.list_position + (car.length * self.width)
-            print("dit hoort soms 12 te zijn:", position_above)
+            position_above = car_pos + (car.length * self.width)
 
             # first position under car
-            position_below = car.list_position - self.width
+            position_below = car_pos - self.width
 
             # initialise distances car can move
             distance_above = 0
@@ -143,7 +147,8 @@ class Board(object):
                 pass
 
             else:
-                for x in range(first_below_y, -1):
+                for x in range(-1, first_below_y):
+
                     if self.coordinates[position_below] == True:
                         break
 
@@ -154,7 +159,6 @@ class Board(object):
             # return distances
             return [distance_above, distance_below]
 
-
     # move a car
     def move(self, car, distance):
 
@@ -162,7 +166,7 @@ class Board(object):
         print("car at ({},{})".format(car.x, car.y))
 
         # change previous coordinates
-        car.remove_coordinates(self.coordinates, self.width)
+        self.coordinates = car.remove_coordinates(self.coordinates, self.width)
 
         # change start coordinate
         if car.direction == "hor":
@@ -173,6 +177,5 @@ class Board(object):
         # print new coordinates
         print("moved to ({},{})".format(car.x, car.y))
 
-
         # set coordinates in list
-        car.set_coordinates(self.coordinates, self.width)
+        self.coordinates = car.set_coordinates(self.coordinates, self.width)
