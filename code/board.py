@@ -128,6 +128,7 @@ class Board(object):
 
                     # if car is blocked, stop
                     if self.coordinates[position_above] == True:
+                        print("hoihoi")
                         break
 
                     # if free space, update distance
