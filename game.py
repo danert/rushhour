@@ -1,5 +1,6 @@
 from code.board import Board
 from code.car import Car
+from random import randint
 
 filename = "data/problem.txt"
 
@@ -29,17 +30,34 @@ def main():
     # if game hasn't been won yet, move a car
     while not won():
 
-        board.check_move(board.cars[4])
+        # picks random car
+        random_car = randint(0, (len(board.cars) - 1))
 
-        # TEST move 1 tile
-        #board.move(board.cars[2], 1)
+        # checks possible moves of random_car
+        distances = board.check_move(board.cars[random_car])
+
+        # if car cannot move, pick a new car
+        # while distances[0] == 0 and distances[1] == 0:
+        #     random_car = randint(0, len(board.cars))
+        #     distances = board.check_move(board.cars[random_car])
+
+        # chooses random distance
+        random_distance = randint(distances[0], distances[1])
+
+        # if distance = 0, try again
+        # while random_distance == 0:
+        #     print("test")
+        #     random_distance = randint(distances[0], distances[1])
+
+        # move car
+        board.move(board.cars[random_car], random_distance)
 
         # increase turn counter
         turns = turns + 1
 
     # if won, print amount of steps
     turns = turns + 1
-    print(f"amount of turns: {turns}")
+    print("amount of turns: {}".format(turns))
 
 
 if __name__ == '__main__':

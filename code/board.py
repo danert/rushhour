@@ -96,6 +96,9 @@ class Board(object):
                         distance_left = distance_right - 1
                         position_left = position_right - 1
 
+            # return distances
+            return [distance_right, distance_left]
+
         # if car is vertical
         else:
 
@@ -114,7 +117,7 @@ class Board(object):
             distance_below = 0
 
             # checks if car is standing against upper wall
-            if first_above_y == self.self.height:
+            if first_above_y == self.height:
 
                 # move not possible
                 pass
@@ -146,6 +149,10 @@ class Board(object):
                     else:
                         distance_below = distance_below - 1
                         position_below = position_below - self.width
+
+            # return distances
+            return [distance_above, distance_below]
+
 
     # move a car
     def move(self, car, distance):
