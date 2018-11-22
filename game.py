@@ -28,8 +28,10 @@ def main():
     # if game hasn't been won yet, move a car
     while not won():
 
+        board.check_move(board.cars[2])
+
         # TEST move 1 tile
-        board.move(board.cars[0], 1)
+        #board.move(board.cars[2], 1)
 
         # increase turn counter
         turns = turns + 1
