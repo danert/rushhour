@@ -12,23 +12,24 @@ class Board(object):
         # opens text file
         with open(self.filename, "r") as f:
 
-            self.width = int(f.readline())
-            self.height = int(f.readline())
+            # PROBLEMEN HIERMEE
+            self.width = int(f.readline().strip())
+            self.height = int(f.readline().strip())
 
             self.coordinates = [False] * (self.width * self.height)
 
             f.readline()
 
-            self.exitx = int(f.readline())
-            self.exity = int(f.readline())
+            self.exitx = int(f.readline().strip())
+            self.exity = int(f.readline().strip())
 
             f.readline()
 
             # creates cars until EOF
             while True:
-                length = int(f.readline())
-                x = int(f.readline())
-                y = int(f.readline())
+                length = int(f.readline().strip())
+                x = int(f.readline().strip())
+                y = int(f.readline().strip())
                 direction = f.readline().strip()
                 end = f.readline()
 

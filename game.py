@@ -2,7 +2,7 @@ from code.board import Board
 from code.car import Car
 from random import randint
 
-filename = "data/problem.txt"
+filename = "data/problem2.txt"
 
 def main():
 
