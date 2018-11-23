@@ -54,6 +54,8 @@ def main():
         # increase turn counter
         turns = turns + 1
 
+        print("turn ", turns)
+
     # if won, print amount of steps
     turns = turns + 1
     print("amount of turns: {}".format(turns))
