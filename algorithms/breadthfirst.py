@@ -15,11 +15,17 @@ class Breadth_first(object):
     # beweegt steeds een rij nodes naar onderen (denk ik)
     def breadthfirst(self):
 
+        # reset original_nodelist
+        original_nodelist = self.nodes
+
         # iterates through every node
-        for i in range(len(self.nodes)):
+        for i in range(len(original_nodelist)):
+
+            # reset original_node
+            original_node = original_nodelist[i]
 
             # if redcar is right in front of exit, game is won
-            if self.nodes[i].cars[0].x == (self.nodes[i].width - 2):
+            if original_nodelist[i].cars[0].x == (original_nodelist[i].width - 2):
                 print("game has been won in {} turns".format(self.turns))
                 return True
 
@@ -29,15 +35,15 @@ class Breadth_first(object):
                 #return True
 
             # grabs position of red car
-            redcar_position = self.nodes[i].width * self.nodes[i].cars[0].y + self.nodes[i].cars[0].x
+            redcar_position = original_nodelist[i].width * original_nodelist[i].cars[0].y + original_nodelist[i].cars[0].x
             # TODO: OOK CHECKEN OF RODE AUTO NIET PRECIES VOOR EXIT STAAT MAAR DEZE WEL VRIJ IS
 
             # if game not won, create children of node
             # iterate over every car on board
-            for j in range(len(self.nodes[i].cars)):
+            for j in range(len(original_node.cars)):
 
                 # check possible moves of car
-                distances = self.nodes[i].check_move(self.nodes[i].cars[j])
+                distances = original_node.check_move(original_node.cars[j])
 
                 # if car can't move, do nothing
                 if distances[0] == 0 and distances[1] == 0:
@@ -54,13 +60,15 @@ class Breadth_first(object):
 
                         else:
 
-                            # move car and add new board to node list (DE MOVE FUNCTIE IN BOARD PRINT NU DE MOVES MAAR DAT MOET NIET, NOG AANPASSEN)
-                            new_board = self.nodes[i]
-                            new_board.move(self.nodes[i].cars[j], k)
+                            # reset new_board
+                            new_board = original_node
+
+                            # move car and add new board to node list (DE MOVE FUNCTIE IN BOARD PRINT NU DE MOVES MAAR DAT MOET ER ANDERS UITZIEN, ZE MOVEN NIET ECHT)
+                            new_board.move(new_board.cars[j], k)
                             self.nodes.append(new_board)
 
             # remove node from list
-            self.nodes.remove(self.nodes[i])
+            self.nodes.remove(original_node)
 
         # increase turn counter
         self.turns = self.turns + 1

@@ -96,8 +96,8 @@ class Board(object):
                         break
 
                     else:
-                        distance_left = distance_right - 1
-                        position_left = position_right - 1
+                        distance_left = distance_left - 1
+                        position_left = position_left - 1
 
             # return distances
             return [distance_right, distance_left]
