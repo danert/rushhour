@@ -23,6 +23,11 @@ class Breadth_first(object):
                 print("game has been won in {} turns".format(self.turns))
                 return True
 
+            # hier wilde ik net mee verdergaan, duncan!
+            #if self.nodes[i].cars[0].x == (self.nodes[i].width - 2):
+                #print("game has been won in {} turns".format(self.turns))
+                #return True
+
             # grabs position of red car
             redcar_position = self.nodes[i].width * self.nodes[i].cars[0].y + self.nodes[i].cars[0].x
             # TODO: OOK CHECKEN OF RODE AUTO NIET PRECIES VOOR EXIT STAAT MAAR DEZE WEL VRIJ IS
