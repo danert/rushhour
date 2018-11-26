@@ -1,6 +1,6 @@
 from code.board import Board
 from code.car import Car
-from random import randint
+from algorithms.random import Random
 
 filename = "data/problem2.txt"
 
@@ -30,23 +30,13 @@ def main():
     # if game hasn't been won yet, move a car
     while not won():
 
-        # picks random car
-        random_car = randint(0, (len(board.cars) - 1))
+        # initialise random algorithm
+        random = Random(board)
 
-        # checks possible moves of random_car
-        distances = board.check_move(board.cars[random_car])
-
-        # if car cannot move, pick a new car
-        while distances[0] == 0 and distances[1] == 0:
-            random_car = randint(0, (len(board.cars) - 1))
-            distances = board.check_move(board.cars[random_car])
-
-        # chooses random distance
-        random_distance = randint(distances[1], distances[0])
-
-        # if distance = 0, try again
-        while random_distance == 0:
-            random_distance = randint(distances[1], distances[0])
+        # let the algorithm choose a move
+        random_move = random.random_move()
+        random_car = random_move[0]
+        random_distance = random_move[1]
 
         # move car
         board.move(board.cars[random_car], random_distance)
