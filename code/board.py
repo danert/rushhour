@@ -92,6 +92,7 @@ class Board(object):
 
             else:
                 for x in range(-1, first_left_x):
+                    
                     if self.coordinates[position_left] == True:
                         break
 

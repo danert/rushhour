@@ -9,7 +9,7 @@ class Random(object):
         self.board = board
 
         # turn counter
-        turns = 0
+        self.turns = 0
 
     # if car can drive through exit, game has been won
     def won(self):
@@ -39,15 +39,15 @@ class Random(object):
             random_distance = random_move[1]
 
             # move car
-            board.move(board.cars[random_car], random_distance)
+            self.board.move(self.board.cars[random_car], random_distance)
 
             # increase turn counter
-            turns = turns + 1
+            self.turns = self.turns + 1
 
-            print("turn ", turns)
+            print("turn ", self.turns)
 
         # if won, print amount of steps
-        turns = turns + 1
+        self.turns = self.turns + 1
         print("amount of turns: {}".format(turns))
 
     def random_move(self):
@@ -60,7 +60,9 @@ class Random(object):
 
         # if car cannot move, pick a new car
         while distances[0] == 0 and distances[1] == 0:
+            print(distances)
             random_car = randint(0, (len(self.board.cars) - 1))
+            print("random car = ", random_car)
             distances = self.board.check_move(self.board.cars[random_car])
 
         # chooses random distance
