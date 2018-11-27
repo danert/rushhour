@@ -1,0 +1,22 @@
+lower bound ieder probleem/bord: 1 stap (als de rode auto al door de exit kan rijden)
+
+initial upper bound ieder probleem: oneindig (want auto’s kunnen heen en weer blijven rijden)
+
+upper bound probleem 2: 106 (beste oplossing met random algoritme)
+
+upper bound probleem 3: 338 (beste oplossing met random algoritme)
+
+upper bound probleem 1 met archief: 1.000.000 (4 * 4 * 4 * 5 * 5 * 5 * 5 * 5 * 5)
+-houdt geen rekening met feit dat auto’s elkaar niet kunnen kruisen/op dezelfde plek kunnen staan
+
+upper bound probleem 4 met archief:
+
+trucks: 10 (kunnen op 7 plekken staan)
+auto’s: 11 (kunenn op 8 plekken staan)
+7^10 * 8^11 = 2.42644391 * 10^18 (zonder rekening te houden met kruisingen/zelfde plek)
+
+upperbound probleem 7 met archief: 
+
+trucks: 16 (kunnen op 10 plekken staan)
+auto’s: 28 (kunnen op 11 plekken staan)
+10^16 * 11^28 = 1.44209936 * 10^45 (zonder rekening te houden met kruisingen/zelfde plek)
