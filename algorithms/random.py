@@ -2,6 +2,7 @@
 from code.board import Board
 from random import randint
 
+
 class Random(object):
 
     def __init__(self, board):
