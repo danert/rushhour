@@ -1,6 +1,6 @@
 from code.board import Board
 from code.car import Car
-from algorithms.random import Random
+from algorithms.random_move import Random
 from algorithms.breadthfirst import Breadth_first
 
 filename = "data/problem2.txt"
@@ -11,51 +11,14 @@ def main():
     board = Board(filename)
     board.loadgame()
 
-    # DIT ALLES HIERONDER IS VOOR HET RANDOM ALGORITME
-    # turn counter
-    # turns = 0
-    #
-    # # if car can drive through exit, game has been won
-    # def won():
-    #
-    #     list_pos = board.width * board.cars[0].y + board.cars[0].x
-    #     checkpos = int(list_pos) + 2
-    #
-    #     # checks coordinates between exit and redcar
-    #     for x in range(checkpos, 24):
-    #
-    #         if board.coordinates[x] == True:
-    #             return False
-    #
-    #     return True
-    #
-    # # if game hasn't been won yet, move a car
-    # while not won():
-    #
-    #     # initialise random algorithm
-    #     random = Random(board)
-    #
-    #     # let the algorithm choose a move
-    #     random_move = random.random_move()
-    #     random_car = random_move[0]
-    #     random_distance = random_move[1]
-    #
-    #     # move car
-    #     board.move(board.cars[random_car], random_distance)
-    #
-    #     # increase turn counter
-    #     turns = turns + 1
-    #
-    #     print("turn ", turns)
-    #
-    # # if won, print amount of steps
-    # turns = turns + 1
-    # print("amount of turns: {}".format(turns))
+    # random algorithm
+    random = Random(board)
+    random.play()
 
-    # BREADTH FIRST TEST
-    breadth_first = Breadth_first(board)
-    while breadth_first.breadthfirst() == False:
-        breadth_first.breadthfirst()
+    # breathfirst algorithm
+    # breadth_first = Breadth_first(board)
+    # while breadth_first.breadthfirst() == False:
+    #     breadth_first.breadthfirst()
 
 
 if __name__ == '__main__':

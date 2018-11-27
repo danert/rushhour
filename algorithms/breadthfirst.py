@@ -73,7 +73,7 @@ class Breadth_first(object):
         # increase turn counter
         self.turns = self.turns + 1
 
-        print("turn", self.turns)
+        print("turn ", self.turns)
 
         # let game.py know that game has not been won yet
         return False
