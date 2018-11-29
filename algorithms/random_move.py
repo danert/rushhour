@@ -45,6 +45,7 @@ class Random(object):
             self.turns = self.turns + 1
 
             print("turn ", self.turns)
+            print("change: {}.".format(self.board.moves[self.turns - 1]))
 
         # if won, print amount of steps
         self.turns = self.turns + 1
