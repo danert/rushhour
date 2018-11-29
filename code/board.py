@@ -165,7 +165,7 @@ class Board(object):
     def move(self, car, distance):
 
         # print start coordinates
-        print("car at ({},{})".format(car.x, car.y))
+        #print("car at ({},{})".format(car.x, car.y))
 
         # change previous coordinates
         self.coordinates = car.remove_coordinates(self.coordinates, self.width)
@@ -177,7 +177,7 @@ class Board(object):
             car.y = car.y + distance
 
         # print new coordinates
-        print("moved to ({},{})".format(car.x, car.y))
+        #print("moved to ({},{})".format(car.x, car.y))
 
         # set coordinates in list
         self.coordinates = car.set_coordinates(self.coordinates, self.width)

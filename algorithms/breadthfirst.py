@@ -12,6 +12,9 @@ class Breadth_first(object):
         # turn counter
         self.turns = 0
 
+        # initialise archive (lists of coordinates)
+        self.archive = {}
+
     # beweegt steeds een rij nodes naar onderen (denk ik)
     def breadthfirst(self):
 
@@ -24,26 +27,19 @@ class Breadth_first(object):
             # reset original_node
             original_node = original_nodelist[i]
 
-            # if redcar is right in front of exit, game is won (aparte functie van maken!)
-            #if original_nodelist[i].cars[0].x == (original_nodelist[i].width - 2):
-                #print("game has been won in {} turns".format(self.turns))
-                #return True
-
+            # check if car can move through exit
             list_pos = self.board.width * self.board.cars[0].y + self.board.cars[0].x
             checkpos = int(list_pos) + 2
 
-            # checks coordinates between exit and redcar (6x6: 24, 9x9: 45, 12x12:84)
+            # checks coordinates between exit and redcar
             for x in range(checkpos, ((self.board.width * self.board.exity + self.board.exitx) + 2)):
 
                 if self.board.coordinates[x] == True:
                     break
 
-                print("game has been won in {} turns".format(self.turns))
-                return True
-
-            # grabs position of red car
-            redcar_position = original_nodelist[i].width * original_nodelist[i].cars[0].y + original_nodelist[i].cars[0].x
-            # TODO: OOK CHECKEN OF RODE AUTO NIET PRECIES VOOR EXIT STAAT MAAR DEZE WEL VRIJ IS
+                else:
+                    print("game has been won in {} turns".format(self.turns))
+                    return True
 
             # if game not won, create children of node
             # iterate over every car on board
@@ -72,7 +68,17 @@ class Breadth_first(object):
 
                             # move car and add new board to node list (DE MOVE FUNCTIE IN BOARD PRINT NU DE MOVES MAAR DAT MOET ER ANDERS UITZIEN, ZE MOVEN NIET ECHT)
                             new_board.move(new_board.cars[j], k)
-                            self.nodes.append(new_board)
+
+                            # check if new board is in archive
+                            if "{}".format(new_board.coordinates) in self.archive:
+                                pass
+
+                            else:
+                                # append board to nodes list if not in archive
+                                self.nodes.append(new_board)
+
+                                # put board in archive
+                                self.archive["{}".format(new_board.coordinates)] = new_board.coordinates
 
             # remove node from list
             self.nodes.remove(self.nodes[0])
