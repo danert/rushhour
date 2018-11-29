@@ -19,7 +19,7 @@ class Random(object):
         list_pos = board.width * board.cars[0].y + board.cars[0].x
         checkpos = int(list_pos) + 2
 
-        # checks coordinates between exit and redcar
+        # checks coordinates between exit and redcar (6x6: 24, 9x9: 45, 12x12:84)
         for x in range(checkpos, 24):
 
             if board.coordinates[x] == True:
@@ -70,6 +70,7 @@ class Random(object):
 
         # if distance = 0, try again
         while random_distance == 0:
+            print("test")
             random_distance = randint(distances[1], distances[0])
 
 

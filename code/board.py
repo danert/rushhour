@@ -12,7 +12,7 @@ class Board(object):
         # opens text file
         with open(self.filename, "r") as f:
 
-            # PROBLEMEN HIERMEE
+            # initialise width and height of board
             self.width = int(f.readline().strip())
             self.height = int(f.readline().strip())
 
@@ -92,7 +92,7 @@ class Board(object):
 
             else:
                 for x in range(-1, first_left_x):
-                    
+
                     if self.coordinates[position_left] == True:
                         break
 
