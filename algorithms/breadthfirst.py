@@ -1,4 +1,4 @@
-
+import copy
 
 class Breadth_first(object):
 
@@ -16,7 +16,7 @@ class Breadth_first(object):
     def breadthfirst(self):
 
         # reset original_nodelist
-        original_nodelist = self.nodes
+        original_nodelist = copy.deepcopy(self.nodes)
 
         # iterates through every node
         for i in range(len(original_nodelist)):
@@ -24,15 +24,22 @@ class Breadth_first(object):
             # reset original_node
             original_node = original_nodelist[i]
 
-            # if redcar is right in front of exit, game is won
-            if original_nodelist[i].cars[0].x == (original_nodelist[i].width - 2):
-                print("game has been won in {} turns".format(self.turns))
-                return True
-
-            # hier wilde ik net mee verdergaan, duncan!
-            #if self.nodes[i].cars[0].x == (self.nodes[i].width - 2):
+            # if redcar is right in front of exit, game is won (aparte functie van maken!)
+            #if original_nodelist[i].cars[0].x == (original_nodelist[i].width - 2):
                 #print("game has been won in {} turns".format(self.turns))
                 #return True
+
+            list_pos = self.board.width * self.board.cars[0].y + self.board.cars[0].x
+            checkpos = int(list_pos) + 2
+
+            # checks coordinates between exit and redcar (6x6: 24, 9x9: 45, 12x12:84)
+            for x in range(checkpos, ((self.board.width * self.board.exity + self.board.exitx) + 2)):
+
+                if self.board.coordinates[x] == True:
+                    break
+
+                print("game has been won in {} turns".format(self.turns))
+                return True
 
             # grabs position of red car
             redcar_position = original_nodelist[i].width * original_nodelist[i].cars[0].y + original_nodelist[i].cars[0].x
@@ -61,14 +68,14 @@ class Breadth_first(object):
                         else:
 
                             # reset new_board
-                            new_board = original_node
+                            new_board = copy.deepcopy(original_node)
 
                             # move car and add new board to node list (DE MOVE FUNCTIE IN BOARD PRINT NU DE MOVES MAAR DAT MOET ER ANDERS UITZIEN, ZE MOVEN NIET ECHT)
                             new_board.move(new_board.cars[j], k)
                             self.nodes.append(new_board)
 
             # remove node from list
-            self.nodes.remove(original_node)
+            self.nodes.remove(self.nodes[0])
 
         # increase turn counter
         self.turns = self.turns + 1

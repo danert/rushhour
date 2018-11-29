@@ -20,7 +20,7 @@ class Random(object):
         checkpos = int(list_pos) + 2
 
         # checks coordinates between exit and redcar (6x6: 24, 9x9: 45, 12x12:84)
-        for x in range(checkpos, 24):
+        for x in range(checkpos, ((board.width * board.exity + board.exitx) + 2)):
 
             if board.coordinates[x] == True:
                 return False

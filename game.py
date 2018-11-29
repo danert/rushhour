@@ -12,13 +12,13 @@ def main():
     board.loadgame()
 
     # random algorithm
-    random = Random(board)
-    random.play()
+    # random = Random(board)
+    # random.play()
 
-    # breathfirst algorithm
-    # breadth_first = Breadth_first(board)
-    # while breadth_first.breadthfirst() == False:
-    #     breadth_first.breadthfirst()
+    # breadthfirst algorithm
+    breadth_first = Breadth_first(board)
+    while breadth_first.breadthfirst() == False:
+        breadth_first.breadthfirst()
 
 
 if __name__ == '__main__':
