@@ -35,7 +35,7 @@ class Board(object):
 
                 # adds car to list
                 car = Car(length, x, y, direction, self.width)
-                self.coordinates = car.update_coordinates(self.coordinates, self.width)
+                self.coordinates = car.set_coordinates(self.coordinates, self.width)
                 self.cars.append(car)
 
                 # if EOF, break
@@ -167,6 +167,9 @@ class Board(object):
         # print start coordinates
         print("car at ({},{})".format(car.x, car.y))
 
+        # change previous coordinates
+        self.coordinates = car.remove_coordinates(self.coordinates, self.width)
+
         # change start coordinate
         if car.direction == "hor":
             car.x = car.x + distance
@@ -177,4 +180,4 @@ class Board(object):
         print("moved to ({},{})".format(car.x, car.y))
 
         # set coordinates in list
-        self.coordinates = car.update_coordinates(self.coordinates, self.width)
+        self.coordinates = car.set_coordinates(self.coordinates, self.width)

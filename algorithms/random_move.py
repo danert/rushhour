@@ -48,7 +48,7 @@ class Random(object):
 
         # if won, print amount of steps
         self.turns = self.turns + 1
-        print("amount of turns: {}".format(turns))
+        print("amount of turns: {}".format(self.turns))
 
     def random_move(self):
 
@@ -60,9 +60,7 @@ class Random(object):
 
         # if car cannot move, pick a new car
         while distances[0] == 0 and distances[1] == 0:
-            print(distances)
             random_car = randint(0, (len(self.board.cars) - 1))
-            print("random car = ", random_car)
             distances = self.board.check_move(self.board.cars[random_car])
 
         # chooses random distance
@@ -70,7 +68,6 @@ class Random(object):
 
         # if distance = 0, try again
         while random_distance == 0:
-            print("test")
             random_distance = randint(distances[1], distances[0])
 
 
