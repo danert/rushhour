@@ -6,6 +6,9 @@ class Board(object):
         self.cars = []
         self.filename = filename
 
+        # list that keeps track of all the made moves
+        self.moves = []
+
     # loads problem/game
     def loadgame(self):
 
@@ -164,8 +167,9 @@ class Board(object):
     # move a car
     def move(self, car, distance):
 
-        # print start coordinates
-        #print("car at ({},{})".format(car.x, car.y))
+        # grab begin coordinates
+        begin_x = car.x
+        begin_y = car.y
 
         # change previous coordinates
         self.coordinates = car.remove_coordinates(self.coordinates, self.width)
@@ -176,8 +180,14 @@ class Board(object):
         else:
             car.y = car.y + distance
 
-        # print new coordinates
-        #print("moved to ({},{})".format(car.x, car.y))
-
         # set coordinates in list
         self.coordinates = car.set_coordinates(self.coordinates, self.width)
+
+        # grab end coordinates
+        end_x = car.x
+        end_y = car.y
+
+        move = "({},{}) to ({},{})".format(begin_x, begin_y, end_x, end_y)
+
+        # add move to movelist
+        self.moves.append(move)

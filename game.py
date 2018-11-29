@@ -3,7 +3,7 @@ from code.car import Car
 from algorithms.random_move import Random
 from algorithms.breadthfirst import Breadth_first
 
-filename = "data/problem2.txt"
+filename = "data/problem4.txt"
 
 def main():
 

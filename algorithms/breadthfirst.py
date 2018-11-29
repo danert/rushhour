@@ -15,7 +15,7 @@ class Breadth_first(object):
         # initialise archive (lists of coordinates)
         self.archive = {}
 
-    # beweegt steeds een rij nodes naar onderen (denk ik)
+    # move down a generation
     def breadthfirst(self):
 
         # reset original_nodelist
@@ -28,17 +28,18 @@ class Breadth_first(object):
             original_node = original_nodelist[i]
 
             # check if car can move through exit
-            list_pos = self.board.width * self.board.cars[0].y + self.board.cars[0].x
+            list_pos = original_nodelist[i].width * original_nodelist[i].cars[0].y + original_nodelist[i].cars[0].x
             checkpos = int(list_pos) + 2
 
             # checks coordinates between exit and redcar
-            for x in range(checkpos, ((self.board.width * self.board.exity + self.board.exitx) + 2)):
+            for x in range(checkpos, ((original_nodelist[i].width * original_nodelist[i].exity + original_nodelist[i].exitx) + 2)):
 
-                if self.board.coordinates[x] == True:
+                if original_nodelist[i].coordinates[x] == True:
                     break
 
-                else:
-                    print("game has been won in {} turns".format(self.turns))
+                # checks if coordinate before exit is empty
+                elif x == ((original_nodelist[i].width * original_nodelist[i].exity + original_nodelist[i].exitx) + 1) and original_nodelist[i].coordinates[x] == False:
+                    print("game has been won in {} turns with the following moves: {}.".format(self.turns, original_nodelist[i].moves))
                     return True
 
             # if game not won, create children of node
