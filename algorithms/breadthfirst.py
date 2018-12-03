@@ -31,6 +31,11 @@ class Breadth_first(object):
             list_pos = original_nodelist[i].width * original_nodelist[i].cars[0].y + original_nodelist[i].cars[0].x
             checkpos = int(list_pos) + 2
 
+            # check if redcar is directly in front of exit
+            if list_pos == (original_node.width * original_node.exity + original_node.exitx):
+                print("game has been won in {} turns with the following moves: {}.".format(self.turns, original_nodelist[i].moves))
+                return True
+
             # checks coordinates between exit and redcar
             for x in range(checkpos, ((original_nodelist[i].width * original_nodelist[i].exity + original_nodelist[i].exitx) + 2)):
 

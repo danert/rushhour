@@ -6,6 +6,9 @@ from algorithms.depthfirst import Depth_first
 
 filename = "data/problem2.txt"
 
+# choose between random, bf and def
+algorithm = "random"
+
 def main():
 
     # make new board
@@ -13,17 +16,20 @@ def main():
     board.loadgame()
 
     # random algorithm
-    # random = Random(board)
-    # random.play()
+    if algorithm == "random":
+        random = Random(board)
+        random.play()
 
     # breadthfirst algorithm
-    # breadth_first = Breadth_first(board)
-    # while breadth_first.breadthfirst() == False:
-    #     breadth_first.breadthfirst()
+    elif algorithm == "bf":
+        breadth_first = Breadth_first(board)
+        while breadth_first.breadthfirst() == False:
+            breadth_first.breadthfirst()
 
-    # depthfirst algorithms
-    depth_first = Depth_first(board)
-    depth_first.depthfirst()
+    # depthfirst algorithm
+    elif algorithm == "df":
+        depth_first = Depth_first(board)
+        depth_first.depthfirst()
 
 
 if __name__ == '__main__':
