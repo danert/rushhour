@@ -76,6 +76,7 @@ class Depth_first(object):
 
             # delete child if it's not the winning board
             self.stack.pop(0)
+            return False
 
         # if not won, move to next child
         while next_child() == False:
