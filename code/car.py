@@ -14,8 +14,6 @@ class Car(object):
 
         # number of first coordinate
         list_position = width * self.y + self.x
-        #TEST
-        print(self.x, self.y, self.list_position)
 
         # set coordinate as taken in list
         coordinates[list_position] = True

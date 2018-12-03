@@ -20,8 +20,8 @@ class Random(object):
         checkpos = int(list_pos) + 2
 
         # check if redcar is directly in front of exit
-        if list_pos == (original_node.width * original_node.exity + original_node.exitx):
-            print("game has been won in {} turns with the following moves: {}.".format(self.turns, original_nodelist[i].moves))
+        if list_pos == (board.width * board.exity + board.exitx):
+            print("game has been won in {} turns with the following moves: {}.".format(self.turns, board.moves))
             return True
 
         # checks coordinates between exit and redcar (6x6: 24, 9x9: 45, 12x12:84)

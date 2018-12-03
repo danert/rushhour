@@ -19,7 +19,7 @@ class Depth_first(object):
     def depthfirst(self):
 
         def next_child():
-            print("testtttt")
+
             # grab top of stack
             node = self.stack[0]
 
@@ -60,8 +60,8 @@ class Depth_first(object):
                                 checkpos = int(list_pos) + 2
 
                                 # check if redcar is directly in front of exit
-                                if list_pos == (original_node.width * original_node.exity + original_node.exitx):
-                                    print("game has been won in {} turns with the following moves: {}.".format(self.turns, original_nodelist[i].moves))
+                                if list_pos == (new_node.width * new_node.exity + new_node.exitx):
+                                    print("game has been won in {} turns with the following moves: {}.".format(self.turns, new_node.moves))
                                     return True
 
                                 # checks coordinates between exit and redcar
