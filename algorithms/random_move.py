@@ -43,7 +43,7 @@ class Random(object):
 
             # increase turn counter
             self.turns = self.turns + 1
-
+            #print("game has been won in {} turns with the following moves: {}.".format(self.turns, self.board.moves))
             print("turn ", self.turns)
             print("change: {}.".format(self.board.moves[self.turns - 1]))
 
