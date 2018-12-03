@@ -4,10 +4,10 @@ from algorithms.random_move import Random
 from algorithms.breadthfirst import Breadth_first
 from algorithms.depthfirst import Depth_first
 
-filename = "data/problem2.txt"
+filename = "data/problem.txt"
 
-# choose between random, bf and def
-algorithm = "random"
+# choose between random, bf and df
+algorithm = "df"
 
 def main():
 

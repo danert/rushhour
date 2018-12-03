@@ -59,6 +59,11 @@ class Depth_first(object):
                                 list_pos = new_node.width * new_node.cars[0].y + new_node.cars[0].x
                                 checkpos = int(list_pos) + 2
 
+                                # check if redcar is directly in front of exit
+                                if list_pos == (original_node.width * original_node.exity + original_node.exitx):
+                                    print("game has been won in {} turns with the following moves: {}.".format(self.turns, original_nodelist[i].moves))
+                                    return True
+
                                 # checks coordinates between exit and redcar
                                 for x in range(checkpos, ((new_node.width * new_node.exity + new_node.exitx) + 2)):
 
