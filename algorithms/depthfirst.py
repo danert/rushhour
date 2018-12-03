@@ -19,7 +19,7 @@ class Depth_first(object):
     def depthfirst(self):
 
         def next_child():
-
+            print("testtttt")
             # grab top of stack
             node = self.stack[0]
 
@@ -46,8 +46,36 @@ class Depth_first(object):
                         else:
                             new_node = copy.deepcopy(node)
                             new_node.move(node.cars[j], k)
-                            self.stack.insert(0, new_node)
-                            return False
+
+                            # check if new board is in archive
+                            if "{}".format(new_node.coordinates) in self.archive:
+                                pass
+
+                            else:
+                                # append board to archive
+                                self.archive["{}".format(new_node.coordinates)] = new_node.coordinates
+
+                                # check if car can move through exit
+                                list_pos = new_node.width * new_node.cars[0].y + new_node.cars[0].x
+                                checkpos = int(list_pos) + 2
+
+                                # checks coordinates between exit and redcar
+                                for x in range(checkpos, ((new_node.width * new_node.exity + new_node.exitx) + 2)):
+
+                                    if new_node.coordinates[x] == True:
+                                        break
+
+                                    # checks if coordinate before exit is empty
+                                    elif x == ((new_node.width * new_node.exity + new_node.exitx) + 1) and new_node.coordinates[x] == False:
+                                        print("game has been won in {} turns with the following moves: {}.".format(len(new_node.turns), new_node.moves))
+                                        return True
+
+                                # insert new node in stack
+                                self.stack.insert(0, new_node)
+                                return False
+
+            # delete child if it's not the winning board
+            self.stack.pop(0)
 
         # if not won, move to next child
         while next_child() == False:
