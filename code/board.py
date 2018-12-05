@@ -6,6 +6,7 @@ class Board(object):
         self.cars = []
         self.filename = filename
         self.id = 0
+        self.coordinates = []
 
         # list that keeps track of all the made moves
         self.moves = []
@@ -21,7 +22,9 @@ class Board(object):
             self.height = int(f.readline().strip())
 
             # make list of coordinates with id for each car
-            self.coordinates = [[False, 0]] * (self.width * self.height)
+            for p in range(self.width * self.height):
+                spot = [False, 0]
+                self.coordinates.append(spot)
 
             f.readline()
 
@@ -194,6 +197,7 @@ class Board(object):
         end_y = car.y
 
         move = "({},{}) to ({},{})".format(begin_x, begin_y, end_x, end_y)
+        print(move)
 
         # add move to movelist
         self.moves.append(move)

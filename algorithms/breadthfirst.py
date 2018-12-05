@@ -62,6 +62,7 @@ class Breadth_first(object):
 
                             # check if new board is in archive
                             if "{}".format(new_board.coordinates) in self.archive:
+                                print("testtttt")
                                 pass
 
                             else:
