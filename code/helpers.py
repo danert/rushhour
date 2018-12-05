@@ -15,11 +15,11 @@ def won(board):
     # checks coordinates between exit and redcar
     for x in range(checkpos, ((board.width * board.exity + board.exitx) + 2)):
 
-        if board.coordinates[x] == True:
+        if board.coordinates[x][0] == True:
             break
 
         # checks if coordinate before exit is empty
-        elif x == ((board.width * board.exity + board.exitx) + 1) and board.coordinates[x] == False:
+        elif x == ((board.width * board.exity + board.exitx) + 1) and board.coordinates[x][0] == False:
             print("game has been won in {} turns with the following moves: {}.".format(len(board.moves), board.moves))
             return True
 

@@ -146,7 +146,7 @@ class Board(object):
                 for x in range(first_above_y, self.height):
 
                     # if car is blocked, stop
-                    if self.coordinates[position_above] == True:
+                    if self.coordinates[position_above][0] == True:
                         break
 
                     # if free space, update distance
@@ -163,7 +163,7 @@ class Board(object):
             else:
                 for x in range(-1, first_below_y):
 
-                    if self.coordinates[position_below] == True:
+                    if self.coordinates[position_below][0] == True:
                         break
 
                     else:
