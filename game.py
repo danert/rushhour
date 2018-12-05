@@ -7,7 +7,7 @@ from algorithms.depthfirst import Depth_first
 filename = "data/problem2.txt"
 
 # choose between random, bf and df
-algorithm = "random"
+algorithm = "bf"
 
 def main():
 

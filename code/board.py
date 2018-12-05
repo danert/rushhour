@@ -5,6 +5,7 @@ class Board(object):
 
         self.cars = []
         self.filename = filename
+        self.id = 0
 
         # list that keeps track of all the made moves
         self.moves = []
@@ -19,7 +20,8 @@ class Board(object):
             self.width = int(f.readline().strip())
             self.height = int(f.readline().strip())
 
-            self.coordinates = [False] * (self.width * self.height)
+            # make list of coordinates with id for each car
+            self.coordinates = [[False, 0]] * (self.width * self.height)
 
             f.readline()
 
@@ -35,14 +37,18 @@ class Board(object):
                 y = int(f.readline().strip())
                 direction = f.readline().strip()
                 end = f.readline()
+                self.id = self.id + 1
+                print(self.id)
 
                 # adds car to list
-                car = Car(length, x, y, direction, self.width)
+                car = Car(length, x, y, direction, self.width, self.id)
                 self.coordinates = car.set_coordinates(self.coordinates, self.width)
                 self.cars.append(car)
 
                 # if EOF, break
                 if end == "":
+                    print(self.coordinates)
+                    print(self.cars)
                     break
 
     # checks if move is possible
@@ -79,7 +85,7 @@ class Board(object):
                 for x in range(first_right_x, self.width):
 
                     # if car is blocked, stop
-                    if self.coordinates[position_right] == True:
+                    if self.coordinates[position_right][0] == True:
                         break
 
                     # if free space, update distance
@@ -96,7 +102,7 @@ class Board(object):
             else:
                 for x in range(-1, first_left_x):
 
-                    if self.coordinates[position_left] == True:
+                    if self.coordinates[position_left][0] == True:
                         break
 
                     else:
