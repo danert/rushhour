@@ -1,4 +1,5 @@
 import copy
+from code.helpers import won
 
 class Breadth_first(object):
 
@@ -27,25 +28,9 @@ class Breadth_first(object):
             # reset original_node
             original_node = original_nodelist[i]
 
-            # check if car can move through exit
-            list_pos = original_nodelist[i].width * original_nodelist[i].cars[0].y + original_nodelist[i].cars[0].x
-            checkpos = int(list_pos) + 2
-
-            # check if redcar is directly in front of exit
-            if list_pos == (original_node.width * original_node.exity + original_node.exitx):
-                print("game has been won in {} turns with the following moves: {}.".format(self.turns, original_nodelist[i].moves))
+            # check if game has been won
+            if won(original_node) == True:
                 return True
-
-            # checks coordinates between exit and redcar
-            for x in range(checkpos, ((original_nodelist[i].width * original_nodelist[i].exity + original_nodelist[i].exitx) + 2)):
-
-                if original_nodelist[i].coordinates[x] == True:
-                    break
-
-                # checks if coordinate before exit is empty
-                elif x == ((original_nodelist[i].width * original_nodelist[i].exity + original_nodelist[i].exitx) + 1) and original_nodelist[i].coordinates[x] == False:
-                    print("game has been won in {} turns with the following moves: {}.".format(self.turns, original_nodelist[i].moves))
-                    return True
 
             # if game not won, create children of node
             # iterate over every car on board

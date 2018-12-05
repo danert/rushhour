@@ -1,6 +1,7 @@
 # algorithm that returns a random picked car and random distance the car can move
 from code.board import Board
 from random import randint
+from code.helpers import won
 
 
 class Random(object):
@@ -11,32 +12,10 @@ class Random(object):
         # turn counter
         self.turns = 0
 
-    # if car can drive through exit, game has been won
-    def won(self):
-
-        board = self.board
-
-        list_pos = board.width * board.cars[0].y + board.cars[0].x
-        checkpos = int(list_pos) + 2
-
-        # check if redcar is directly in front of exit
-        if list_pos == (board.width * board.exity + board.exitx):
-            print("game has been won in {} turns with the following moves: {}.".format(self.turns, board.moves))
-            return True
-
-        # checks coordinates between exit and redcar (6x6: 24, 9x9: 45, 12x12:84)
-        for x in range(checkpos, ((board.width * board.exity + board.exitx) + 2)):
-
-            if board.coordinates[x] == True:
-                return False
-
-        return True
-
-
     def play(self):
 
         # if game hasn't been won yet, move a car
-        while not self.won():
+        while not won(self.board):
 
             # let the algorithm choose a move
             random_move = self.random_move()
@@ -48,6 +27,7 @@ class Random(object):
 
             # increase turn counter
             self.turns = self.turns + 1
+
             #print("game has been won in {} turns with the following moves: {}.".format(self.turns, self.board.moves))
             print("turn ", self.turns)
             print("change: {}.".format(self.board.moves[self.turns - 1]))

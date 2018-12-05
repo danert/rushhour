@@ -1,4 +1,5 @@
 import copy
+from code.helpers import won
 
 
 class Depth_first(object):
@@ -42,7 +43,7 @@ class Depth_first(object):
                         if k == 0:
                             pass
 
-                        # add child to stack
+                        # move car
                         else:
                             new_node = copy.deepcopy(node)
                             new_node.move(node.cars[j], k)
@@ -55,25 +56,9 @@ class Depth_first(object):
                                 # append board to archive
                                 self.archive["{}".format(new_node.coordinates)] = new_node.coordinates
 
-                                # check if car can move through exit
-                                list_pos = new_node.width * new_node.cars[0].y + new_node.cars[0].x
-                                checkpos = int(list_pos) + 2
-
-                                # check if redcar is directly in front of exit
-                                if list_pos == (new_node.width * new_node.exity + new_node.exitx):
-                                    print("game has been won in {} turns with the following moves: {}.".format(self.turns, new_node.moves))
+                                # check if game has been won
+                                if won(new_node) == True:
                                     return True
-
-                                # checks coordinates between exit and redcar
-                                for x in range(checkpos, ((new_node.width * new_node.exity + new_node.exitx) + 2)):
-
-                                    if new_node.coordinates[x] == True:
-                                        break
-
-                                    # checks if coordinate before exit is empty
-                                    elif x == ((new_node.width * new_node.exity + new_node.exitx) + 1) and new_node.coordinates[x] == False:
-                                        print("game has been won in {} turns with the following moves: {}.".format(len(new_node.turns), new_node.moves))
-                                        return True
 
                                 # insert new node in stack
                                 self.stack.insert(0, new_node)
