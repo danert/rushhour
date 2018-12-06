@@ -41,7 +41,6 @@ class Board(object):
                 direction = f.readline().strip()
                 end = f.readline()
                 self.id = self.id + 1
-                print(self.id)
 
                 # adds car to list
                 car = Car(length, x, y, direction, self.width, self.id)
@@ -50,8 +49,6 @@ class Board(object):
 
                 # if EOF, break
                 if end == "":
-                    print(self.coordinates)
-                    print(self.cars)
                     break
 
     # checks if move is possible
@@ -197,7 +194,6 @@ class Board(object):
         end_y = car.y
 
         move = "({},{}) to ({},{})".format(begin_x, begin_y, end_x, end_y)
-        print(move)
 
         # add move to movelist
         self.moves.append(move)

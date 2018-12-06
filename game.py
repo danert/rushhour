@@ -3,11 +3,12 @@ from code.car import Car
 from algorithms.random_move import Random
 from algorithms.breadthfirst import Breadth_first
 from algorithms.depthfirst import Depth_first
+from algorithms.random_move_infinite import Randominfinite
 
 filename = "data/problem3.txt"
 
-# choose between random, bf and df
-algorithm = "bf"
+# choose between random, randominf, bf and df
+algorithm = "randominf"
 
 def main():
 
@@ -30,6 +31,11 @@ def main():
     elif algorithm == "df":
         depth_first = Depth_first(board)
         depth_first.depthfirst()
+
+    # plays random algorithm again and again, keeps finding a shorter solution
+    elif algorithm == "randominf":
+        randominf = Randominfinite(board)
+        randominf.play()
 
 
 if __name__ == '__main__':
