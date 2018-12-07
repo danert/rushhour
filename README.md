@@ -14,7 +14,7 @@ Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven 
 | 7 | 461 | |
 
 #### Visualisatie oplossing probleem 2 (breadth-first)
-<img src="https://github.com/danert/rushhour/blob/master/rushhour_bf_prob2.gif" width="50%" height="50%"/>
+<img src="https://github.com/danert/rushhour/blob/master/doc/rushhour_bf_prob2.gif" width="50%" height="50%"/>
 
 
 #### Random Algoritme (geeft een oplossing voor alle borden)
@@ -30,3 +30,6 @@ Voor de borden groter dan 6x6 komt een depth-first algoritme beter van pas. Dit 
 Het random algoritme kan men het best gebruiken als er gegarandeerd een oplossing gevonden moet worden. Het gaat hierbij niet om de beste, niet de meest efficiënte, maar wel de snelste. Verder kan dit algoritme alle borden (snel) oplossen. In vergelijking met het random algoritme vindt het breadth-first algoritme gegarandeerd de beste en kortste oplossing. Dit algoritme werkt in vergelijking met het random en depth-first algoritme het traagst en kan om deze reden niet alle borden oplossen. Tot slot zorgt het depth-first algoritme altijd voor een oplossing. Dit is niet de beste en kortste oplossing, maar hij vindt wel sneller een oplossing dan het breadth-first algoritme.
 
 We kunnen de uitkomsten van het random-algoritme goed gebruiken om de depth-first te optimaliseren. Door de kortste uitkomst van het random-algoritme te nemen kunnen we dit gebruiken als upper bound. Als de depth-first een pad in de tree afgaat dat meer stappen nodig heeft dan die kortste oplossing kan hij doorgaan naar het volgende pad. 
+
+<img src="https://github.com/danert/rushhour/blob/master/doc/20181207014853.jpg" width="50%" height="50%"/>
+<img src="https://github.com/danert/rushhour/blob/master/doc/20181207025833.jpg" width="50%" height="50%"/>
