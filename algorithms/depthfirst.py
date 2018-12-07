@@ -50,11 +50,29 @@ class Depth_first(object):
 
                             # check if new board is in archive
                             if "{}".format(new_node.coordinates) in self.archive:
-                                pass
+
+                                # check turns of board in archive
+                                if self.archive.get("{}".format(new_node.coordinates), None) > len(new_node.moves):
+
+                                    # append board to archive (value = moves played on board)
+                                    self.archive["{}".format(new_node.coordinates)] = len(new_node.moves)
+
+                                    # check if game has been won
+                                    if won(new_node) == True:
+                                        return True
+
+                                    # insert new node in stack
+                                    self.stack.insert(0, new_node)
+                                    return False
+
+                                # if board has been encountered at an earlier stage in the tree before
+                                else:
+                                    pass
 
                             else:
-                                # append board to archive
-                                self.archive["{}".format(new_node.coordinates)] = new_node.coordinates
+
+                                # append board to archive (value = moves played on board)
+                                self.archive["{}".format(new_node.coordinates)] = len(new_node.moves)
 
                                 # check if game has been won
                                 if won(new_node) == True:
