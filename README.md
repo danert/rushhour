@@ -32,4 +32,9 @@ Het random algoritme kan men het best gebruiken als er gegarandeerd een oplossin
 We kunnen de uitkomsten van het random-algoritme goed gebruiken om de depth-first te optimaliseren. Door de kortste uitkomst van het random-algoritme te nemen kunnen we dit gebruiken als upper bound. Als de depth-first een pad in de tree afgaat dat meer stappen nodig heeft dan die kortste oplossing kan hij doorgaan naar het volgende pad. 
 
 <img src="https://github.com/danert/rushhour/blob/master/doc/20181207014853.jpg" width="100%" height="100%"/>
+
+Hierboven zie je een vergelijking tussen de kortst gevonden oplossingen van twee verschillende algoritmes.
+
 <img src="https://github.com/danert/rushhour/blob/master/doc/20181207025833.jpg" width="100%" height="100%"/>
+
+De grafiek hierboven laat het verschil zien tussen het aantal borden wat ieder algoritme 'bekijkt' voordat er een oplossing is gevonden. Omdat het random algoritme steeds één bord per keer bekijkt en hiermee willekeurig een zet doet, is het aantal borden dat 'bekeken' is gelijk aan de oplossing. Het breadth-first algoritme bekijkt van ieder bord de andere borden die hieruit gevormd kunnen worden en daarom is dit getal veel groter dan die van het random algoritme. Bij de borden van 9x9 en 12x12 zal dit verschil nog groter zijn, aangezien er veel meer auto's, moves en dus ook meer bordformaties zijn.
