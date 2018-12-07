@@ -8,7 +8,7 @@ from algorithms.random_move_infinite import Randominfinite
 filename = "data/problem2.txt"
 
 # choose between random, randominf, bf and df
-algorithm = "bf"
+algorithm = "random"
 
 def main():
 

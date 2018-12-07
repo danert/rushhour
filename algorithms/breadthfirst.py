@@ -72,13 +72,15 @@ class Breadth_first(object):
                                 # put board in archive
                                 self.archive["{}".format(new_board.coordinates)] = new_board.coordinates
 
+                                # show board in terminal
+                                print("")
+                                visualisation(new_board)
+
             # remove node from list
             self.nodes.remove(self.nodes[0])
 
         # increase turn counter
         self.turns = self.turns + 1
-
-        visualisation(self.board)
 
         print("turn ", self.turns)
 
