@@ -31,5 +31,5 @@ Het random algoritme kan men het best gebruiken als er gegarandeerd een oplossin
 
 We kunnen de uitkomsten van het random-algoritme goed gebruiken om de depth-first te optimaliseren. Door de kortste uitkomst van het random-algoritme te nemen kunnen we dit gebruiken als upper bound. Als de depth-first een pad in de tree afgaat dat meer stappen nodig heeft dan die kortste oplossing kan hij doorgaan naar het volgende pad. 
 
-<img src="https://github.com/danert/rushhour/blob/master/doc/20181207014853.jpg" width="50%" height="50%"/>
-<img src="https://github.com/danert/rushhour/blob/master/doc/20181207025833.jpg" width="50%" height="50%"/>
+<img src="https://github.com/danert/rushhour/blob/master/doc/20181207014853.jpg" width="100%" height="100%"/>
+<img src="https://github.com/danert/rushhour/blob/master/doc/20181207025833.jpg" width="100%" height="100%"/>
