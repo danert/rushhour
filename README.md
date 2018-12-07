@@ -13,6 +13,9 @@ Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven 
 | 6  | 183  |     |
 | 7 | 461 | |
 
+#### Visualisatie oplossing probleem 2 (breadth-first)
+<img src="https://github.com/danert/rushhour/blob/master/rushhour_bf_prob2.gif" width="50%" height="50%"/>
+
 
 #### Random Algoritme (geeft een oplossing voor alle borden)
 Met het gebruik van het random-algoritme hebben we voor ieder bord een oplossing gevonden. Dit algoritme zoekt een willekeurige auto op het bord en verplaatst hem over een willekeurige afstand. Dit algoritme hoeft niks op te slaan (in tegenstelling tot de andere algoritmes in onze vergelijking) Dit zorgt er dan ook voor dat de random algoritme het snelst een oplossing vindt. Het random algoritme zet willekeurige stappen en hoeft alleen deze stappen (de route) te onthouden terwijl de breadth-first langzaam een tree afgaat die steeds groter wordt. 
