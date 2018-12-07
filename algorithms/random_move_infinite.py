@@ -2,6 +2,7 @@
 from code.board import Board
 from random import randint
 from code.helpers import won
+from code.helpers import visualisation
 import copy
 
 
@@ -21,6 +22,7 @@ class Randominfinite(object):
             random_move = self.random_move()
             random_car = random_move[0]
             random_distance = random_move[1]
+            visualisation(board)
 
             # move car
             self.board.move(self.board.cars[random_car], random_distance)

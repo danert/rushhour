@@ -2,6 +2,8 @@
 from code.board import Board
 from random import randint
 from code.helpers import won
+from code.helpers import visualisation
+import sys
 
 
 class Random(object):
@@ -29,8 +31,14 @@ class Random(object):
             self.turns = self.turns + 1
 
             #print("game has been won in {} turns with the following moves: {}.".format(self.turns, self.board.moves))
+            visualisation(self.board)
             print("turn ", self.turns)
+            sys.stdout.flush()
             print("change: {}.".format(self.board.moves[self.turns - 1]))
+
+            #if self.board.width == 6:
+            #print(board.coordinates[0][1] + board.coordinates[1][1] + board.coordinates[2][1] + board.coordinates[3][1] + board.coordinates[4][1] + board.coordinates[5][1])
+            #sys.stdout.flush()
 
         # if won, print amount of steps
         self.turns = self.turns + 1

@@ -1,5 +1,6 @@
 import copy
 from code.helpers import won
+from code.helpers import visualisation
 
 class Breadth_first(object):
 
@@ -76,6 +77,8 @@ class Breadth_first(object):
 
         # increase turn counter
         self.turns = self.turns + 1
+
+        visualisation(self.board)
 
         print("turn ", self.turns)
 

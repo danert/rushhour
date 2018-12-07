@@ -1,5 +1,6 @@
 import copy
 from code.helpers import won
+from code.helpers import visualisation
 
 
 class Depth_first(object):
@@ -84,6 +85,7 @@ class Depth_first(object):
 
             # delete child if it's not the winning board
             self.stack.pop(0)
+            visualisation(board)
             return False
 
         # if not won, move to next child
