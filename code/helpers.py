@@ -21,6 +21,7 @@ def won(board):
         # checks if coordinate before exit is empty
         elif x == ((board.width * board.exity + board.exitx) + 1) and board.coordinates[x][0] == False:
             print("game has been won in {} turns with the following moves: {}.".format(len(board.moves), board.moves))
+            print("turns: ", len(board.moves))
             return True
 
     # return false if not won

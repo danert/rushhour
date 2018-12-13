@@ -47,7 +47,7 @@ class Depth_first(object):
                         # move car
                         else:
                             new_node = copy.deepcopy(node)
-                            new_node.move(node.cars[j], k)
+                            new_node.move(new_node.cars[j], k)
 
                             # check if new board is in archive
                             if "{}".format(new_node.coordinates) in self.archive:
@@ -63,6 +63,8 @@ class Depth_first(object):
                                         return True
 
                                     # insert new node in stack
+                                    visualisation(new_node)
+                                    print("")
                                     self.stack.insert(0, new_node)
                                     return False
 
@@ -85,7 +87,6 @@ class Depth_first(object):
 
             # delete child if it's not the winning board
             self.stack.pop(0)
-            visualisation(board)
             return False
 
         # if not won, move to next child

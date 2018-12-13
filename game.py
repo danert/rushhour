@@ -5,10 +5,10 @@ from algorithms.breadthfirst import Breadth_first
 from algorithms.depthfirst import Depth_first
 from algorithms.random_move_infinite import Randominfinite
 
-filename = "data/problem2.txt"
+filename = "data/problem.txt"
 
 # choose between random, randominf, bf and df
-algorithm = "random"
+algorithm = "df"
 
 def main():
 
