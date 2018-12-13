@@ -3,15 +3,15 @@
 
 Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven algoritmes.
 
-| problem  | random | breadth-first |
-| ------------- | ------------- | ------------- |
-| 1  | 543  |   32  |
-| 2  | 51  |    14  |
-| 3  | 117  |   20 |
-| 4  | 551  |   26  |
-| 5  | 403  |     |
-| 6  | 183  |     |
-| 7 | 461 | |
+| problem  | random | breadth-first | depth-first |
+| ------------- | ------------- | ------------- | ------------- |
+| 1  | 543  |   32  |       |
+| 2  | 51  |    14  | 1651 |
+| 3  | 117  |   20 |  395 |
+| 4  | 551  |   26  |       |
+| 5  | 403  |     |       |
+| 6  | 183  |     |       |
+| 7 | 461 | |       |
 
 #### Visualisatie oplossing probleem 2 (breadth-first)
 <img src="https://github.com/danert/rushhour/blob/master/doc/rushhour_bf_prob2.gif" width="50%" height="50%"/>
