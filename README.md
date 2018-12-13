@@ -9,7 +9,7 @@ Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven 
 | 2  | 51  |    14  | 1651 |
 | 3  | 117  |   20 |  395 |
 | 4  | 551  |   26  |       |
-| 5  | 403  |  294   |       |
+| 5  | 294  |     |       |
 | 6  | 183  |     |       |
 | 7 | 318 | |       |
 
