@@ -8,7 +8,7 @@ Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven 
 | 1  | 453  |   32  |       |
 | 2  | 51  |    14  | 1651 |
 | 3  | 117  |   20 |  395 |
-| 4  | 551  |   26  |       |
+| 4  | 432  |   26  |       |
 | 5  | 294  |     |       |
 | 6  | 183  |     |       |
 | 7 | 318 | |       |
