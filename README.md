@@ -11,7 +11,7 @@ Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven 
 | 4  | 551  |   26  |       |
 | 5  | 403  |     |       |
 | 6  | 183  |     |       |
-| 7 | 461 | |       |
+| 7 | 318 | |       |
 
 #### Visualisatie oplossing probleem 2 (breadth-first)
 <img src="https://github.com/danert/rushhour/blob/master/doc/rushhour_bf_prob2.gif" width="50%" height="50%"/>
