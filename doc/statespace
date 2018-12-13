@@ -20,3 +20,14 @@ upperbound probleem 7 met archief:
 trucks: 16 (kunnen op 10 plekken staan)
 auto’s: 28 (kunnen op 11 plekken staan)
 10^16 * 11^28 = 1.44209936 * 10^45 (zonder rekening te houden met kruisingen/zelfde plek)
+
+-------------------------------
+upper bounds rekening houdend met auto's die voor of achter een auto staan:
+probleem 1: hetzelfde (1.000.000)
+
+probleem 2: 3*3*3*3*4*5*5*3*3*5*5*5*5 = 45.562.5000
+
+probleem 3: 2*2*3*3*5*5*5*5*3*3*5*3*3= 9.112.500
+
+probleem 4: 7*7*7*5*5*3*8*6*6*7*4*4*3*3*8*7*4*4*4*3*3*3 = 7,2267023646 * 10^14
+
