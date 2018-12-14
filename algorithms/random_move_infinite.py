@@ -22,7 +22,7 @@ class Randominfinite(object):
             random_move = self.random_move()
             random_car = random_move[0]
             random_distance = random_move[1]
-            visualisation(board)
+            #visualisation(board)
 
             # move car
             self.board.move(self.board.cars[random_car], random_distance)

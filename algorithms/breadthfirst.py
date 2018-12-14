@@ -70,7 +70,7 @@ class Breadth_first(object):
                                 self.nodes.append(new_board)
 
                                 # put board in archive
-                                self.archive["{}".format(new_board.coordinates)] = new_board.coordinates
+                                self.archive["{}".format(new_board.coordinates)] = 0
 
                                 # show board in terminal
                                 print("")
