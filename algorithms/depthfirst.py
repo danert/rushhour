@@ -5,7 +5,7 @@ from code.helpers import visualisation
 
 class Depth_first(object):
 
-    def __init__(self, board):
+    def __init__(self, board, bound):
 
         self.board = board
 
@@ -18,15 +18,32 @@ class Depth_first(object):
         # initialise archive (lists of coordinates)
         self.archive = {}
 
+        # checks if bound has been given
+        self.bound = bound
+
+
     def depthfirst(self):
 
         def next_child():
 
+            # check if stack is empty
+            if len(self.stack) == 0:
+                print("Stack is empty, this probably means you should increase your bound!")
+                return 1
+
             # grab top of stack
-            node = self.stack[0]
+            node = self.stack[-1]
 
             # iterate over every car on board
             for j in range(len(node.cars)):
+
+                # do nothing if no bound has been given
+                if not self.bound:
+                    pass
+
+                # breaks if bound has been reached
+                elif len(node.moves) == int(self.bound):
+                    break
 
                 # check possible moves of car
                 distances = node.check_move(node.cars[j])
@@ -86,7 +103,7 @@ class Depth_first(object):
                                 return False
 
             # delete child if it's not the winning board
-            self.stack.pop(0)
+            self.stack.pop()
             return False
 
         # if not won, move to next child
