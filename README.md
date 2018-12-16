@@ -31,7 +31,7 @@ Bijvoorbeeld voor spel nummer 4, met een depth first algoritme en een bound van 
 python game.py 4 df 30
 ```
 
-#### Uitleg per algoritme
+### Uitleg per algoritme
 Voor de uitleg van elk apart algoritme, zie _'algorithms'_ map.
 
 ## Auteurs
