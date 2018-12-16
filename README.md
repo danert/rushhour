@@ -1,7 +1,5 @@
-# RushHour (Media Maffia)
+# Rush Hour (Media Maffia)
 
-
-#### Uitleg probleem
 Rush Hour is een puzzel waarin een rode auto staat: de jouwe. Deze moet in zo min mogelijk stappen naar de uitgang geleid worden. Echter, andere voertuigen versperren de weg; auto's van twee eenheden lang en trucks van drie eenheden lang die alleen in hun rijrichting bewogen mogen worden. Ze mogen niet draaien. Kortom: het is de bedoeling om de rode auto naar buiten te leiden met zo min mogelijk stappen.
 
 ## Aan de slag (Getting Started)
