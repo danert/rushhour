@@ -13,6 +13,23 @@ Deze codebase is volledig geschreven in [Python3.6.3](https://www.python.org/dow
 pip install -r requirements.txt
 ```
 
+### Structuur
+
+???
+
+## Test (Testing)
+
+Om de code te draaien met de standaardconfiguratie (bv. brute-force en voorbeeld.csv) gebruik de instructie als volgt. 
+
+```
+python game.py [probleem nummer] [algoritme] [eventuele bound voor depth first]
+```
+
+Bijvoorbeeld voor spel nummer 4, met een depth first algoritme en een bound van 30:
+
+```
+python game.py 4 df 30
+```
 
 
 Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven algoritmes.
