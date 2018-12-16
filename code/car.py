@@ -11,80 +11,30 @@ class Car(object):
         # horizontal or vertical direction
         self.direction = direction
 
-    def set_coordinates(self, coordinates, width):
+        # number that is used to determine by how many positions a car should shift in coordinate list when moving (see update_coordinates function)
+        if direction == "hor":
+            self.increase_nr = 1
+        else:
+            self.increase_nr = self.width
+
+    def update_coordinates(self, coordinates, command):
+
+        if command == "set":
+            bool = True
+            car = self.id
+
+        # if command is remove
+        else:
+            bool = False
+            car = 0
 
         # number of first coordinate
-        list_position = width * self.y + self.x
+        list_position = self.width * self.y + self.x
 
-
-
-        # set coordinate as taken in list
-        coordinates[list_position][0] = True
-        coordinates[list_position][1] = self.id
-
-        # calculate other coordinates belonging to cars
-        if self.length == 2 and self.direction == "hor":
-            list_position += 1
-            coordinates[list_position][0] = True
-            coordinates[list_position][1] = self.id
-
-        elif self.length == 2 and self.direction == "ver":
-            list_position += width
-            coordinates[list_position][0] = True
-            coordinates[list_position][1] = self.id
-
-        elif self.length == 3 and self.direction == "hor":
-            list_position += 1
-            coordinates[list_position][0] = True
-            coordinates[list_position][1] = self.id
-            list_position += 1
-            coordinates[list_position][0] = True
-            coordinates[list_position][1] = self.id
-
-        elif self.length == 3 and self.direction == "ver":
-            list_position += width
-            coordinates[list_position][0] = True
-            coordinates[list_position][1] = self.id
-            list_position += width
-            coordinates[list_position][0] = True
-            coordinates[list_position][1] = self.id
-
-        return coordinates
-
-    def remove_coordinates(self, coordinates, width):
-
-        # number of first coordinate
-        list_position = width * self.y + self.x
-
-        # set coordinate as taken in list
-        coordinates[list_position][0] = False
-        coordinates[list_position][1] = 0
-
-        # calculate other coordinates belonging to cars
-        if self.length == 2 and self.direction == "hor":
-            list_position += 1
-            coordinates[list_position][0] = False
-            coordinates[list_position][1] = 0
-
-        elif self.length == 2 and self.direction == "ver":
-            list_position += width
-            coordinates[list_position][0] = False
-            coordinates[list_position][1] = 0
-
-        elif self.length == 3 and self.direction == "hor":
-            list_position += 1
-            coordinates[list_position][0] = False
-            coordinates[list_position][1] = 0
-            list_position += 1
-            coordinates[list_position][0] = False
-            coordinates[list_position][1] = 0
-
-        elif self.length == 3 and self.direction == "ver":
-            list_position += width
-            coordinates[list_position][0] = False
-            coordinates[list_position][1] = 0
-            list_position += width
-            coordinates[list_position][0] = False
-            coordinates[list_position][1] = 0
+        # update other coordinates belonging to car
+        for x in range (0, self.length):
+            coordinates[list_position][0] = bool
+            coordinates[list_position][1] = car
+            list_position += self.increase_nr
 
         return coordinates
