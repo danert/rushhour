@@ -3,7 +3,17 @@
 Rush Hour is een puzzel waarin een rode auto staat: de jouwe. Deze moet in zo min mogelijk stappen naar de uitgang geleid worden. Echter, andere voertuigen versperren de weg; auto's van twee eenheden lang en trucks van drie eenheden lang die alleen in hun rijrichting bewogen mogen worden. Ze mogen niet draaien. Kortom: het is de bedoeling om de rode auto naar buiten te leiden met zo min mogelijk stappen.
 
 
-## Aan de slag (Getting Started)
+## Aan de slag
+
+### Vereisten
+
+Deze codebase is volledig geschreven in [Python3.6.3](https://www.python.org/downloads/). In requirements.txt staan alle benodigde packages om de code succesvol te draaien. Deze zijn gemakkelijk te installeren via pip dmv. de volgende instructie:
+
+```
+pip install -r requirements.txt
+```
+
+
 
 Deze tabel laat de kortste oplossingen zien die zijn gevonden met de aangegeven algoritmes.
 
