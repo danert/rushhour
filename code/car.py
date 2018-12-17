@@ -38,6 +38,18 @@ class Car(object):
             self.increase_nr = self.width
 
     def update_coordinates(self, coordinates, command):
+        """Either removes or updates the coordinates the car is standing on
+        of a given list.
+
+        Args:
+            coordinates (list): list of coordinates that needs to be changed
+            command (str): lets function know if it should remove or update
+            (can be "remove" or "set")
+
+        Returns:
+            list: the new list of coordinates after the change
+
+        """
 
         if command == "set":
             bool = True

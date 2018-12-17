@@ -1,6 +1,6 @@
-import copy
-from code.helpers import won
 from code.helpers import visualisation
+from code.helpers import won
+import copy
 
 class Breadth_first(object):
 

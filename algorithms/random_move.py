@@ -1,12 +1,24 @@
-# algorithm that returns a random picked car and random distance the car can move
 from code.board import Board
-from random import randint
-from code.helpers import won
 from code.helpers import visualisation
+from code.helpers import won
+from random import randint
 import sys
 
 
 class Random(object):
+    """Algorithm that randomly chooses cars on a board and moves these a
+    random amount of tiles. Stops if the red car can move through the exit
+    on the board.
+
+    Args:
+        board (Board): the board that needs to be played/solved
+
+    Attributes:
+        self.board (Board): board that the game is played on
+        self.turns (int): keeps track of how many moves have been done on the
+        board
+
+    """
 
     def __init__(self, board):
         self.board = board
@@ -15,6 +27,10 @@ class Random(object):
         self.turns = 0
 
     def play(self):
+        """Main function of the algorithm. Picks a random car on the board that
+        is able to move, and executes a random move with this car. Keeps on
+        doing this until a solution has been found.
+        """
 
         # if game hasn't been won yet, move a car
         while not won(self.board):
@@ -30,21 +46,24 @@ class Random(object):
             # increase turn counter
             self.turns = self.turns + 1
 
-            #print("game has been won in {} turns with the following moves: {}.".format(self.turns, self.board.moves))
             visualisation(self.board)
             print("turn ", self.turns)
             sys.stdout.flush()
             print("change: {}.".format(self.board.moves[self.turns - 1]))
-
-            #if self.board.width == 6:
-            #print(board.coordinates[0][1] + board.coordinates[1][1] + board.coordinates[2][1] + board.coordinates[3][1] + board.coordinates[4][1] + board.coordinates[5][1])
-            #sys.stdout.flush()
 
         # if won, print amount of steps
         self.turns = self.turns + 1
         print("amount of turns: {}".format(self.turns))
 
     def random_move(self):
+        """Picks a random car and checks if it is able to move. If it can't,
+        pick another car until it finds one that can move. Then picks a random
+        move that this car can execute.
+
+        Returns:
+            Car: car that can be moved
+            int: random distance this car can move on the board
+        """
 
         # picks random car
         random_car = randint(0, (len(self.board.cars) - 1))
@@ -63,7 +82,6 @@ class Random(object):
         # if distance = 0, try again
         while random_distance == 0:
             random_distance = randint(distances[1], distances[0])
-
 
         # returns random car and distance
         return [random_car, random_distance]

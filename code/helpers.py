@@ -1,6 +1,3 @@
-# some functions that can be used by multiple algorithms
-
-
 def won(board):
     """Checks if the red car can move through the exit (if so, game has been won).
 

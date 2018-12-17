@@ -1,9 +1,9 @@
-from code.board import Board
-from code.car import Car
-from algorithms.random_move import Random
 from algorithms.breadthfirst import Breadth_first
 from algorithms.depthfirst import Depth_first
+from algorithms.random_move import Random
 from algorithms.random_move_infinite import Randominfinite
+from code.board import Board
+from code.car import Car
 import sys
 
 

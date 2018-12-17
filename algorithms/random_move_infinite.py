@@ -1,9 +1,8 @@
-# algorithm that returns a random picked car and random distance the car can move
 from code.board import Board
-from random import randint
 from code.helpers import won
 from code.helpers import visualisation
 import copy
+from random import randint
 
 
 class Randominfinite(object):
