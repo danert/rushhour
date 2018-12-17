@@ -29,10 +29,17 @@ Om het programma uit te voeren kun je de volgende instructie te gebruiken:
 python game.py [probleem nummer] [algoritme] [eventuele bound voor depth first]
 ```
 
-Bijvoorbeeld voor spel nummer 4, met een depth first algoritme en een bound van 30:
+Onze algoritmes hebben in code de volgende commands:
+
+Bijvoorbeeld, voor spel nummer 4, met een depth-first algoritme en een bound van 30:
 
 ```
 python game.py 4 df 30
+```
+En voor spel nummer 2 met een depth-first algoritme zonder bound:
+
+```
+python game.py 2 df
 ```
 
 ### Uitleg per algoritme
