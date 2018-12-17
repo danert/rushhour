@@ -9,7 +9,7 @@ Rush Hour is een puzzel waarin een rode auto staat: de jouwe. Deze moet in zo mi
 
 ### Vereisten
 
-Deze codebase is volledig geschreven in [Python3.6.3](https://www.python.org/downloads/). In requirements.txt staan alle benodigde packages om de code succesvol te draaien. Deze zijn gemakkelijk te installeren via pip dmv. de volgende instructie:
+Deze codebase is volledig geschreven in Python 3.7.0. In requirements.txt staan alle benodigde packages om de code succesvol te draaien. Deze zijn gemakkelijk te installeren via pip dmv. de volgende instructie:
 
 ```
 pip install -r requirements.txt
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ???
 
-### Test
+### Hoe te gebruiken
 
 Om de code te draaien met de standaardconfiguratie (bv. brute-force en voorbeeld.csv) gebruik de instructie als volgt. 
 
