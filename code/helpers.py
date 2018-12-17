@@ -105,5 +105,3 @@ def visualisation(board):
     #     print(" ")
     #     print(board.coordinates[132][1], " ", board.coordinates[133][1], " ", board.coordinates[134][1], " ", board.coordinates[135][1], " ", board.coordinates[136][1], " ", board.coordinates[137][1], " ", board.coordinates[138][1], " ", board.coordinates[139][1], " ", board.coordinates[140][1]), " ", board.coordinates[141][1], " ", board.coordinates[142][1], " ", board.coordinates[143][1])
     #     print(" ")
-
-    return True

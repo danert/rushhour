@@ -3,6 +3,21 @@ from code.helpers import won
 import copy
 
 class Breadth_first(object):
+    """Algorithm that finds a solution by traversing a tree, generation by
+    generation. Checks for each node if it's a winning board, and creates
+    every child for that board if it's not.
+
+    Args:
+        board (Board): board that needs to be solved
+
+    Attributes:
+        self.board (Board): board the game is played on
+        self.nodes (list): list of nodes/boards that keeps expanding as more
+        childs are added
+        self.turns (int): keeps track of how many generations have been traversed
+        self.archive (dict): keeps track of all the board formations that have
+        been checked
+    """
 
     def __init__(self, board):
 
@@ -17,8 +32,13 @@ class Breadth_first(object):
         # initialise archive (lists of coordinates)
         self.archive = {}
 
-    # move down a generation
     def breadthfirst(self):
+        """Moves down a generation in the tree. game.py calls this function
+        each time a generation has been checked and the game hasn't been won yet.
+
+        Returns:
+            bool: True if game has been won, False if not yet won.
+        """
 
         # reset original_nodelist
         original_nodelist = copy.deepcopy(self.nodes)
