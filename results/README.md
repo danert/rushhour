@@ -10,7 +10,7 @@ Hieronder zijn de resultaten per spel per algoritme te zien.
 | 4  | 256  |   26  |       | 26 (bound 26) |
 | 5  | 214  |     |       |
 | 6  | 27  |     |       |
-| 7 | 318 | |       |
+| 7 | 316 | |       |
 
 
 In de mappen hierboven vind je de kortst gevonden oplossing per bord voor ieder algoritme.
