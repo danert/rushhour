@@ -4,7 +4,7 @@ Hieronder zijn de resultaten per spel per algoritme te zien.
 
 | problem  | random | breadth-first | depth-first | depth-first + bound
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1  | 410  |   32  |       | 32 (bound 32) |
+| 1  | 338  |   32  |       | 32 (bound 32) |
 | 2  | 30  |    14  | 1651 | 14 (bound 14) |
 | 3  | 59  |   20 |  395 | 20 (bound 20) |
 | 4  | 256  |   26  |       | 26 (bound 26) |
