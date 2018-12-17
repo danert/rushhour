@@ -1,6 +1,6 @@
 # Resultaten
 
-Hier vertel ik dat de resultaten hier worden opgeslagen en in welk format.
+Hieronder zijn de resultaten per spel per algoritme te zien.
 
 | problem  | random | breadth-first | depth-first | depth-first + bound
 | ------------- | ------------- | ------------- | ------------- | ------------- |
