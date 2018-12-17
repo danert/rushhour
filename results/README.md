@@ -12,3 +12,5 @@ Hieronder zijn de resultaten per spel per algoritme te zien.
 | 6  | 27  |     |       |
 | 7 | 318 | |       |
 
+
+In de mappen hierboven vind je de kortst gevonden oplossing per bord voor ieder algoritme.
