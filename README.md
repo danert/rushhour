@@ -9,8 +9,6 @@ Rush Hour is een puzzel waarin een rode auto staat: de jouwe. Deze moet in zo mi
 
 ### Vereisten
 
-Deze codebase is volledig geschreven in Python 3.7.0. In requirements.txt staan alle benodigde packages om de code succesvol te draaien. Deze zijn gemakkelijk te installeren via pip dmv. de volgende instructie:
-
 Dit project is gemaakt in Python 3.7.0. Alle benodigheden voor het uitvoeren van de code, zijn te vinden in requirements.txt. Deze installeer je met het volgende command:
 
 ```
@@ -19,11 +17,13 @@ pip install -r requirements.txt
 
 ### Structuur
 
-In de map _algorithms_ 
+In onze database hebben we vier hoofdmappen. In de map _algorithms_ zitten alle gemaakte algoritmes (random, breadth-first, depth-first, depth-first + bound en random infinite). In de map _code_ zitten de classes _Board_ en _Car_. Ook zit hier een _helpers.py_ bestand in die enkele functies bevat waarvan meerdere algoritmes gebruik maken. In de map _data_ zitten de tekstbestanden die de problemen die opgelost moeten worden representeren. Het bestand _game.py_ maakt gebruik van deze drie mappen om de borden van Rushhour op te lossen. 
 
-### Hoe te gebruiken
+In de _results_ map vind je een README met daarin een tabel die voor ieder algoritme de kortst gevonden oplossing voor ieder bord weergeeft. In de aparte tekstbestanden zijn de reproduceerbare stappen te vinden om de borden op te lossen. 
 
-Om de code te draaien met de standaardconfiguratie (bv. brute-force en voorbeeld.csv) gebruik de instructie als volgt. 
+### Gebruik
+
+Om het programma uit te voeren kun je de volgende instructie te gebruiken:
 
 ```
 python game.py [probleem nummer] [algoritme] [eventuele bound voor depth first]
