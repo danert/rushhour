@@ -31,6 +31,17 @@ python game.py [probleem nummer] [algoritme] [eventuele bound voor depth first]
 
 Onze algoritmes hebben in code de volgende commands:
 
+| problem  | random | breadth-first | depth-first |
+| ------------- | ------------- | ------------- | ------------- |
+| 1  | 453  |   32  |       |
+| 2  | 51  |    14  | 1651 |
+| 3  | 117  |   20 |  395 |
+| 4  | 432  |   26  |       |
+| 5  | 294  |     |       |
+| 6  | 183  |     |       |
+| 7 | 318 | |       |
+
+
 Bijvoorbeeld, voor spel nummer 4, met een depth-first algoritme en een bound van 30:
 
 ```
