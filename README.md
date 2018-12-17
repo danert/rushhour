@@ -48,6 +48,9 @@ En voor spel nummer 2 met een depth-first algoritme zonder bound:
 ```
 python game.py 2 df
 ```
+### Tips
+* Het wordt afgeraden om het depth-first algoritme te gebruiken zonder bound, aangezien deze vrij traag is vergeleken met de andere algoritmes.
+* Bij het runnen van het breadth-first algoritme bij de borden 5 t/m 7 krijg je (waarschijnlijk) een memory error voordat er een oplossing is gevonden.
 
 ### Uitleg per algoritme
 Voor de uitleg van elk apart algoritme, zie _'algorithms'_ map.
@@ -58,6 +61,3 @@ Voor de uitleg van elk apart algoritme, zie _'algorithms'_ map.
 * Duncan Vrösch
 * Farginda Muhammad
 
-## Dankwoord
-
-* Minor Programmeren van de UvA
