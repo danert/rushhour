@@ -49,8 +49,8 @@ En voor spel nummer 2 met een depth-first algoritme zonder bound:
 python game.py 2 df
 ```
 ### Tips
-* Het wordt afgeraden om het depth-first algoritme te gebruiken zonder bound, aangezien deze vrij traag is vergeleken met de andere algoritmes.
 * Bij het runnen van het breadth-first algoritme bij de borden 5 t/m 7 krijg je (waarschijnlijk) een memory error voordat er een oplossing is gevonden.
+* Het is mogelijk om zelf borden te maken volgens het format beschreven in de map data. Voorwaarde is wel dat deze borden vierkant moeten zijn (geen 8x9 maar wel 8x8 bijv.).
 
 ### Uitleg per algoritme
 Voor de uitleg van elk apart algoritme, zie _'algorithms'_ map.
