@@ -1,6 +1,6 @@
 # Rush Hour (Media Maffia)
 
-Rush Hour is een puzzel waarin een rode auto staat: de jouwe. Deze moet in zo min mogelijk stappen naar de uitgang geleid worden. Echter, andere voertuigen versperren de weg; auto's van twee eenheden lang en trucks van drie eenheden lang die alleen in hun rijrichting bewogen mogen worden. Ze mogen niet draaien. Kortom: het is de bedoeling om de rode auto naar buiten te leiden met zo min mogelijk stappen. De borden verschillen in formaat: 3 borden van 6x6, 3 borden van 9x9 en 1 bord van 12x12 (zie afbeelding).
+Rush Hour is een puzzel waarin een rode auto staat: de jouwe. Deze moet in zo min mogelijk stappen naar de uitgang geleid worden. Echter, andere voertuigen versperren de weg; auto's van twee eenheden lang en trucks van drie eenheden lang die alleen in hun rijrichting bewogen mogen worden. Ze mogen niet draaien. Kortom: het is de bedoeling om de rode auto naar buiten te leiden met zo min mogelijk stappen. De borden die opgelost moeten worden verschillen in formaat: 3 borden van 6x6, 3 borden van 9x9 en 1 bord van 12x12 (zie afbeelding).
 
 <img src="https://github.com/danert/rushhour/blob/master/doc/rushhourborden.png" width="100%" height="100%"/>
 
