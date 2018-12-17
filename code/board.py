@@ -86,122 +86,67 @@ class Board(object):
             int: amount of spots the car can move up or to the left
         """
 
-
-        # horizontal movement
         if car.direction == "hor":
-
-            # x-coordinates of first spots next to car
-            first_right_x = car.x + car.length
-            first_left_x = car.x - 1
-
-            # position of car
-            car_pos = self.width * car.y + car.x
-
-            # first position right of car
-            position_right = car_pos + car.length
-
-            # first position left of car
-            position_left = car_pos - 1
-
-            # initialise distances car can move
-            distance_right = 0
-            distance_left = 0
-
-            # checks if car is standing against right wall
-            if first_right_x == self.width:
-
-                # move not possible
-                pass
-
-            # if car is not standing against wall
-            else:
-                for x in range(first_right_x, self.width):
-
-                    # if car is blocked, stop
-                    if self.coordinates[position_right][0] == True:
-                        break
-
-                    # if free space, update distance
-                    else:
-                        distance_right = distance_right + 1
-                        position_right = position_right + 1
-
-            # check move to left
-            if first_left_x == -1:
-
-                # car is standing against left wall
-                pass
-
-            else:
-                for x in range(-1, first_left_x):
-
-                    if self.coordinates[position_left][0] == True:
-                        break
-
-                    else:
-                        distance_left = distance_left - 1
-                        position_left = position_left - 1
-
-            # return distances
-            return [distance_right, distance_left]
-
-        # if car is vertical
+            coordinate = car.x
+            addition = 1
         else:
+            coordinate = car.y
+            addition = self.width
 
-            # y-coordinates of first spots next to car
-            first_above_y = car.y + car.length
-            first_below_y = car.y - 1
+        # x-coordinates of first spots next to car
+        first_pos_coordinate = coordinate + car.length
+        first_neg_coordinate = coordinate - 1
 
-            # list position of car
-            car_pos = self.width * car.y + car.x
+        # list position of car
+        car_pos = self.width * car.y + car.x
 
-            # first position above car
-            position_above = car_pos + (car.length * self.width)
+        # first position right of or above car
+        first_pos_position = car_pos + (car.length * addition)
 
-            # first position under car
-            position_below = car_pos - self.width
+        # first position left of or below car
+        first_neg_position = car_pos - addition
 
-            # initialise distances car can move
-            distance_above = 0
-            distance_below = 0
+        # initialise distances car can move
+        pos_distance = 0
+        neg_distance = 0
 
-            # checks if car is standing against upper wall
-            if first_above_y == self.height:
+        # checks if car is standing against right or upper wall
+        if first_pos_coordinate == self.width:
 
-                # move not possible
-                pass
+            # move not possible
+            pass
 
-            # if car is not standing against upper wall
-            else:
-                for x in range(first_above_y, self.height):
+        # if car is not standing against wall
+        else:
+            for x in range(first_pos_coordinate, self.width):
 
-                    # if car is blocked, stop
-                    if self.coordinates[position_above][0] == True:
-                        break
+                # if car is blocked, stop
+                if self.coordinates[first_pos_position][0] == True:
+                    break
 
-                    # if free space, update distance
-                    else:
-                        distance_above = distance_above + 1
-                        position_above = position_above + self.width
+                # if free space, update distance
+                else:
+                    pos_distance = pos_distance + 1
+                    first_pos_position = first_pos_position + addition
 
-            # check move down
-            if first_below_y == -1:
+        # check move to left or down
+        if first_neg_coordinate == -1:
 
-                # car is standing against lower wall
-                pass
+            # car is standing against left or bottom wall
+            pass
 
-            else:
-                for x in range(-1, first_below_y):
+        else:
+            for x in range(-1, first_neg_coordinate):
 
-                    if self.coordinates[position_below][0] == True:
-                        break
+                if self.coordinates[first_neg_position][0] == True:
+                    break
 
-                    else:
-                        distance_below = distance_below - 1
-                        position_below = position_below - self.width
+                else:
+                    neg_distance = neg_distance - 1
+                    first_neg_position = first_neg_position - addition
 
-            # return distances
-            return [distance_above, distance_below]
+        # return distances
+        return [pos_distance, neg_distance]
 
     # move a car
     def move(self, car, distance):

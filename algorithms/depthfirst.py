@@ -82,7 +82,7 @@ class Depth_first(object):
                                     # insert new node in stack
                                     visualisation(new_node)
                                     print("")
-                                    self.stack.insert(0, new_node)
+                                    self.stack.insert(-1, new_node)
                                     return False
 
                                 # if board has been encountered at an earlier stage in the tree before
@@ -99,7 +99,7 @@ class Depth_first(object):
                                     return True
 
                                 # insert new node in stack
-                                self.stack.insert(0, new_node)
+                                self.stack.insert(-1, new_node)
                                 return False
 
             # delete child if it's not the winning board
