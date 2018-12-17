@@ -1,5 +1,25 @@
 
 class Car(object):
+    """An object that's a part of a game of Rush Hour. Cars occupy coordinates
+    on a board and can move on this board.
+
+    Args:
+        length (int): the length of the car (can be 2 or 3)
+        x (int): the x-coordinate of the car that's the closed to the bottom
+        left corner of the board
+        y (int): the y-coordinate of the car that's the closed to the bottom
+        left corner of the board
+        direction (str): shows if the car is standing horizontally or vertically
+        (can be "hor" or "ver")
+        width (int): width of the board the car is standing on
+        id (int): unique integer that's used to identify the car
+
+    Attributes:
+        self.list_position (int): coordinate the car is standing on converted to
+        the position in the list of coordinates of the board
+        other attributes: see Args above
+    """
+
     def __init__(self, length, x, y, direction, width, id):
         self.x = x
         self.y = y

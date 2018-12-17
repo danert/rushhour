@@ -1,6 +1,25 @@
 from code.car import Car
 
 class Board(object):
+    """A board of Rush Hour on which the game can be played.
+
+    Args:
+        filename (str): name and location of the problem that needs to be solved
+
+    Attributes:
+        self.cars (list): a list of cars that are placed on the board
+        self.filename (str): the name of the problem that needs to be solved
+        self.id (int): integer that increases when new cars are 'placed' on the
+        board and is used to give each car a unique id
+        self.coordinates (list): list that stores info about each coordinate
+        on the board; is it occupied, and if so, by what car
+        self.moves (list): contains all the moves that have been made on the board
+        self.width (int): width of the board
+        self.height (int): height of the board
+        self.exitx (int): x-coordinate of the tile before the exit
+        self.exity (int): y-coordinate of the tile before the exit
+    """
+
     def __init__(self, filename):
 
         self.cars = []
@@ -13,6 +32,10 @@ class Board(object):
 
     # loads problem/game
     def loadgame(self):
+        """Loads information (height and width and location of exit) and a list
+        of cars from a textfile and uses these to initialise the board. Information
+        about cars from the textfile is used to create a list of cars on the board.
+        """
 
         # opens text file
         with open(self.filename, "r") as f:
@@ -53,6 +76,16 @@ class Board(object):
 
     # checks if move is possible
     def check_move(self, car):
+        """Checks which possible moves a given car can perform.
+
+        Args:
+            car (Car): car on the board of which the possible moves are checked
+
+        Returns:
+            int: amount of spots the car can move up or to the right
+            int: amount of spots the car can move up or to the left
+        """
+
 
         # horizontal movement
         if car.direction == "hor":
@@ -172,6 +205,14 @@ class Board(object):
 
     # move a car
     def move(self, car, distance):
+        """Move a given car a given distance.
+
+        Args:
+            car (Car): the car on the board that needs to be moved
+            distance (int): the amount of coordinates the car needs to move
+            (positive if to the right or up, negative if to the left or down)
+        """
+
 
         # grab begin coordinates
         begin_x = car.x

@@ -2,8 +2,16 @@
 
 
 def won(board):
+    """Checks if the red car can move through the exit (if so, game has been won).
 
-    # check if car can move through exit
+    Args:
+        board (Board): board that this function needs to check
+
+    Returns:
+        boolean: True if game has been won on the board, False if not yet won
+    """
+
+    # grab position of car and position that needs to be checked
     list_pos = board.width * board.cars[0].y + board.cars[0].x
     checkpos = int(list_pos) + 2
 
@@ -28,6 +36,14 @@ def won(board):
 
 
 def visualisation(board):
+    """Prints a visualisation of the given board to the terminal. 0 means the coordinate
+    is empty (there's no car on it), 1 means the coordinate is occupied by the red car and
+    any other number means the coordinate is occupied by a car with that id.
+
+    Args:
+        board (Board): board that needs to be visualised
+    """
+
 
     if board.width == 6:
 
